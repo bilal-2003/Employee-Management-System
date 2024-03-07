@@ -33,10 +33,10 @@ lblAge.grid(row=1, column=2, padx=10, pady=10, sticky="w")
 txtAge = Entry(entries_frame, textvariable=age, font=("Calibri", 16), width=30)
 txtAge.grid(row=1, column=3, padx=10, pady=10, sticky="w")
 
-lbldoj = Label(entries_frame, text="D.O.J", font=("Calibri", 16), bg="#012124", fg="white")
-lbldoj.grid(row=2, column=0, padx=10, pady=10, sticky="w")
-txtDoj = Entry(entries_frame, textvariable=dob, font=("Calibri", 16), width=30)
-txtDoj.grid(row=2, column=1, padx=10, pady=10, sticky="w")
+lbldob = Label(entries_frame, text="D.O.B", font=("Calibri", 16), bg="#012124", fg="white")
+lbldob.grid(row=2, column=0, padx=10, pady=10, sticky="w")
+txtDob = Entry(entries_frame, textvariable=dob, font=("Calibri", 16), width=30)
+txtDob.grid(row=2, column=1, padx=10, pady=10, sticky="w")
 
 lblEmail = Label(entries_frame, text="Email", font=("Calibri", 16), bg="#012124", fg="white")
 lblEmail.grid(row=2, column=2, padx=10, pady=10, sticky="w")
@@ -82,11 +82,11 @@ def dispalyAll():
 
 
 def add_employee():
-    if txtName.get() == "" or txtAge.get() == "" or txtDoj.get() == "" or txtEmail.get() == "" or comboGender.get() == "" or txtContact.get() == "" or txtAddress.get(
+    if txtName.get() == "" or txtAge.get() == "" or txtDob.get() == "" or txtEmail.get() == "" or comboGender.get() == "" or txtContact.get() == "" or txtAddress.get(
             1.0, END) == "":
         messagebox.showerror("Erorr in Input", "Please Fill All the Details")
         return
-    db.insert(txtName.get(),txtAge.get(), txtDoj.get() , txtEmail.get() ,comboGender.get(), txtContact.get(), txtAddress.get(
+    db.insert(txtName.get(),txtAge.get(), txtDob.get() , txtEmail.get() ,comboGender.get(), txtContact.get(), txtAddress.get(
             1.0, END))
     messagebox.showinfo("Success", "Record Inserted")
     clearAll()
@@ -95,17 +95,16 @@ def add_employee():
 
 
 def update_employee():
-    if txtName.get() == "" or txtAge.get() == "" or txtDoj.get() == "" or txtEmail.get() == "" or comboGender.get() == "" or txtContact.get() == "" or txtAddress.get(
+    if txtName.get() == "" or txtAge.get() == "" or txtDob.get() == "" or txtEmail.get() == "" or comboGender.get() == "" or txtContact.get() == "" or txtAddress.get(
             1.0, END) == "":
         messagebox.showerror("Erorr in Input", "Please Fill All the Details")
         return
-    db.update(row[0],txtName.get(), txtAge.get(), txtDoj.get(), txtEmail.get(), comboGender.get(), txtContact.get(),
+    db.update(row[0],txtName.get(), txtAge.get(), txtDob.get(), txtEmail.get(), comboGender.get(), txtContact.get(),
               txtAddress.get(
                   1.0, END))
     messagebox.showinfo("Success", "Record Update")
     clearAll()
     dispalyAll()
-
 
 def delete_employee():
     db.remove(row[0])
