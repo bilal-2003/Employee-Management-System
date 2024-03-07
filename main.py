@@ -33,7 +33,7 @@ lblAge.grid(row=1, column=2, padx=10, pady=10, sticky="w")
 txtAge = Entry(entries_frame, textvariable=age, font=("Calibri", 16), width=30)
 txtAge.grid(row=1, column=3, padx=10, pady=10, sticky="w")
 
-lbldoj = Label(entries_frame, text="D.O.J", font=("Calibri", 16), bg="#012124", fg="white")
+lbldoj = Label(entries_frame, text="D.O.B", font=("Calibri", 16), bg="#012124", fg="white")
 lbldoj.grid(row=2, column=0, padx=10, pady=10, sticky="w")
 txtDoj = Entry(entries_frame, textvariable=dob, font=("Calibri", 16), width=30)
 txtDoj.grid(row=2, column=1, padx=10, pady=10, sticky="w")
